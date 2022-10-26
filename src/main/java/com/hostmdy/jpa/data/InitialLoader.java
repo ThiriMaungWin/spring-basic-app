@@ -42,17 +42,28 @@ public class InitialLoader implements ApplicationListener<ApplicationEvent>{
 		//Many to Many Connect
 		book2.getAuthors().add(author2);
 		author2.getBooks().add(book2);
-		bookRepo.save(book2); //Create/Insert
 		authorRepo.save(author2); //Create/Insert
-//		
-//		
+		bookRepo.save(book2); //Create/Insert
+	
+		
 		Book book3 = new Book("Model Design","Programming", 94.6);
 		Author author3 = new Author("Susan", "Evan", 50, "ss@gmail.com");
 		//Many to Many Connect
 		book3.getAuthors().add(author3);
-		bookRepo.save(book3); //Create/Insert
 		author3.getBooks().add(book3);
 		authorRepo.save(author3); //Create/Insert
+		bookRepo.save(book3); //Create/Insert
+	
+
+		
+		Book book4 = new Book("Driven Design", "programming", 23.9);
+		book4.getAuthors().add(author1);
+		book4.getAuthors().add(author2);
+		
+		authorRepo.save(author1);
+		authorRepo.save(author2);
+		bookRepo.save(book4);
+		
 //		
 	}
 }
